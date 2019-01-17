@@ -96,6 +96,8 @@ add_executable(${PROJECT_NAME}
 #        ${catkin_EXPORTED_TARGETS}
 #        )
 
+add_dependencies(${PROJECT_NAME}_core ladybug_msgs_generate_messages_cpp)
+
 ## Specify libraries to link executable targets against
 target_link_libraries(${PROJECT_NAME}_core
         #${Ladybug_LIBRARIES}
