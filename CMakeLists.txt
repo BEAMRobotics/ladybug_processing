@@ -58,6 +58,7 @@ catkin_package(
         pcl_ros
         roscpp
         sensor_msgs
+        ladybug_msgs
         #  DEPENDS
         #    Boost
 )
@@ -78,12 +79,14 @@ include_directories(
 add_library(${PROJECT_NAME}_core
         src/Colorizer.cpp
         )
+add_dependencies(${PROJECT_NAME}_core ${catkin_EXPORTED_TARGETS})
 
 ## Declare cpp executables
 add_executable(${PROJECT_NAME}
         src/${PROJECT_NAME}_node.cpp
         src/LadybugColorizerNode.cpp
         )
+add_dependencies(${PROJECT_NAME} ${catkin_EXPORTED_TARGETS})
 
 ## Add dependencies to exported targets, like ROS msgs or srvs
 #add_dependencies(${PROJECT_NAME}_core
@@ -96,7 +99,7 @@ add_executable(${PROJECT_NAME}
 #        ${catkin_EXPORTED_TARGETS}
 #        )
 
-add_dependencies(${PROJECT_NAME}_core ladybug_msgs_generate_messages_cpp)
+#add_dependencies(${PROJECT_NAME}_core ladybug_msgs_generate_messages_cpp)
 
 ## Specify libraries to link executable targets against
 target_link_libraries(${PROJECT_NAME}_core
