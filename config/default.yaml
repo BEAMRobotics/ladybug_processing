@@ -1,0 +1,2 @@
+image_subscriber_topic: /image_tiles
+pc_subscriber_topic: /m3d_test/aggregator/cloud

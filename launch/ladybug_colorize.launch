@@ -1,0 +1,17 @@
+<launch>
+
+    <!-- Launch ROS Package Template Node -->
+    <node pkg="ladybug_processing" type="ladybug_processing" name="ladybug_processing" output="screen">
+        <param name="ladybug_conf_location" value="/home/steve/ladybug.conf"/>
+        <param name="image_topic_name" value="/image_tiles/throttled"/>
+        <param name="pointcloud_topic_name" value="/m3d/aggregator/cloud"/>
+        <param name="root_data_folder_name" value="/home/steve/datasets/"/>
+        <param name="save_data" value="false"/>
+        <param name="publish_colored_pointcloud" value="true"/>
+        <param name="colored_pointcloud_topic_name" value="/m3d/aggregator/colored_cloud"/>
+    </node>
+
+    <!--  <node pkg="tf" type="static_transform_publisher" name="tf_temp"
+            args="0.3 0 -0.4 0 0 0 1 /camera /m3d_test/m3d_link 1000" /> -->
+
+</launch>
