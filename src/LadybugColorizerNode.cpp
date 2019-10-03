@@ -81,7 +81,7 @@ void LadybugColorizerNode::PointcloudTopicCallback(const sensor_msgs::PointCloud
 
 
   // Colorize the point cloud
-  //pcl_col_cloud = colorizer_.ColorizePointCloud(current_tiles_, pcl_cloud);
+  pcl_col_cloud = colorizer_.ColorizePointCloud(current_tiles_, pcl_cloud);
 
   //colorizer_.colorizePointCloud(current_tiles_, pcl_cloud, *pcl_col_cloud);
 
